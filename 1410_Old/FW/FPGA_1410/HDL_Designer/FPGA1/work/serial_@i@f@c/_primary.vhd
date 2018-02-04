@@ -1,0 +1,41 @@
+library verilog;
+use verilog.vl_types.all;
+entity serial_IFC is
+    port(
+        clk             : in     vl_logic;
+        rst             : in     vl_logic;
+        CSB             : in     vl_logic;
+        SCLK            : in     vl_logic;
+        SDI             : in     vl_logic;
+        SDO             : inout  vl_logic;
+        PLL_lock        : in     vl_logic;
+        REV             : in     vl_logic_vector(4 downto 0);
+        FB_R            : in     vl_logic_vector(31 downto 0);
+        mode            : out    vl_logic_vector(3 downto 0);
+        phase_offset    : out    vl_logic_vector(7 downto 0);
+        bit_rate        : out    vl_logic_vector(31 downto 0);
+        CLK_POL         : out    vl_logic;
+        DAT_POL         : out    vl_logic;
+        RAND            : out    vl_logic;
+        addr_vld        : out    vl_logic;
+        word_cnt        : out    vl_logic_vector(5 downto 0);
+        num_bytes       : out    vl_logic_vector(1 downto 0);
+        addr            : out    vl_logic_vector(6 downto 0);
+        addr_d          : out    vl_logic_vector(6 downto 0);
+        bit_cnt         : out    vl_logic_vector(2 downto 0);
+        bit_cnt_wr      : out    vl_logic_vector(2 downto 0);
+        addr_wr_en      : out    vl_logic;
+        data_wr_en      : out    vl_logic;
+        data_wr_en_d    : out    vl_logic;
+        rx_data         : out    vl_logic_vector(7 downto 0);
+        rd_nwr          : out    vl_logic;
+        SDO_r           : out    vl_logic;
+        CLK_SRC         : out    vl_logic;
+        DAT_SRC         : out    vl_logic;
+        DAT_PAT         : out    vl_logic_vector(3 downto 0);
+        Diff_en         : out    vl_logic;
+        shift           : out    vl_logic_vector(7 downto 0);
+        addr_incr_en    : out    vl_logic;
+        addr_incr       : out    vl_logic
+    );
+end serial_IFC;

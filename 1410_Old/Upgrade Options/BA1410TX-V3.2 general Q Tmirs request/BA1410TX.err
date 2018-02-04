@@ -1,0 +1,12 @@
+>>> Warning 201 "D:\nati\projects\1410TX\BA1410TX-V3.2\BA1410TX_serial.c" Line 353(1,1): Assignment inside relational expression
+>>> Warning 207 "D:\nati\projects\1410TX\BA1410TX-V3.2\BA1410TX_serial.c" Line 891(1,1): Code has no effect
+>>> Warning 207 "D:\nati\projects\1410TX\BA1410TX-V3.2\BA1410TX_serial.c" Line 896(1,1): Code has no effect
+>>> Warning 202 "BA1410TX.c" Line 26(19,31): Variable never used:   manual_power
+>>> Warning 202 "D:\nati\projects\1410TX\BA1410TX-V3.2\BA1410TX_serial.c" Line 534(15,22): Variable never used:   bitrate
+>>> Warning 202 "D:\nati\projects\1410TX\BA1410TX-V3.2\BA1410TX_serial.c" Line 534(24,27): Variable never used:   sub
+>>> Warning 202 "BA1410TX.c" Line 279(17,20): Variable never used:   idx
+>>> Warning 202 "BA1410TX.c" Line 292(17,20): Variable never used:   idx
+>>> Warning 202 "BA1410TX.c" Line 303(17,20): Variable never used:   idx
+      Memory usage:   ROM=74%      RAM=25% - 39%
+      0 Errors,  9 Warnings.
+Build Successful.

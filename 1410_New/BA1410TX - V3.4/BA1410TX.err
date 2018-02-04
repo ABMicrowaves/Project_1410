@@ -1,0 +1,4 @@
+>>> Warning 216 "BA1410TX.c" Line 804(0,1): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
+      Memory usage:   ROM=84%      RAM=28% - 41%
+      0 Errors,  1 Warnings.
+Build Successful.

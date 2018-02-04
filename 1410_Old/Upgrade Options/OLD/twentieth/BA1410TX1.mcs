@@ -1,0 +1,23 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=BA1410TX.ESYM
+Folder=Intermediary
+[File001]
+Location=D:\nati\projects\1410TX\BA1410TX-V3.2 New Update Status Block\twentieth\BA1410TX.o
+Folder=Intermediary
+[File002]
+Location=BA1410TX.HEX
+Folder=Output
+[File003]
+Location=BA1410TX.LST
+Folder=Output
+[File004]
+Location=BA1410TX.ERR
+Folder=Output
+[File005]
+Location=BA1410TX.COF
+Folder=Output
+[TOOL_LOC_STAMPS]
+tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files\PICC\Ccsc.exe

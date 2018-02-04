@@ -1,0 +1,1 @@
+ -L FPGA1 -l transcript.txt -i -t ns -multisource_delay latest +typdelays FPGA1.Clock_240_tx

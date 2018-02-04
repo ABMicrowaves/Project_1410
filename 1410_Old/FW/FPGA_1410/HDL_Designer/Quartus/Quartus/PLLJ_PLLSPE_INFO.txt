@@ -1,0 +1,5 @@
+PLL_Name	ARTM_tx_240:transmitter|PLL_10_240:phase_locked_loop|altpll:altpll_component|PLL_10_240_altpll:auto_generated|pll1
+PLLJITTER	36
+PLLSPEmax	84
+PLLSPEmin	-53
+

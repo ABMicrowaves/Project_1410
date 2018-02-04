@@ -1,0 +1,11 @@
+>>> Warning 201 "D:\nati\projects\1410TX\BA1410TX-V3.2 New Update Status Block\Fifteenth\BA1410TX_serial.c" Line 512(1,1): Assignment inside relational expression
+>>> Warning 207 "D:\nati\projects\1410TX\BA1410TX-V3.2 New Update Status Block\Fifteenth\BA1410TX_serial.c" Line 1050(1,1): Code has no effect
+>>> Warning 207 "D:\nati\projects\1410TX\BA1410TX-V3.2 New Update Status Block\Fifteenth\BA1410TX_serial.c" Line 1055(1,1): Code has no effect
+>>> Warning 216 "BA1410TX.c" Line 789(0,1): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
+>>> Warning 202 "D:\nati\projects\1410TX\BA1410TX-V3.2 New Update Status Block\Fifteenth\BA1410TX_serial.c" Line 693(15,22): Variable never used:   bitrate
+>>> Warning 202 "BA1410TX.c" Line 328(17,20): Variable never used:   idx
+>>> Warning 202 "BA1410TX.c" Line 341(17,20): Variable never used:   idx
+>>> Warning 202 "BA1410TX.c" Line 352(17,20): Variable never used:   idx
+      Memory usage:   ROM=83%      RAM=28% - 41%
+      0 Errors,  8 Warnings.
+Build Successful.
