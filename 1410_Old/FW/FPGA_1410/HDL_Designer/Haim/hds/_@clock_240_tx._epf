@@ -1,2 +1,0 @@
-DEFAULT_FILE atom @clock_240_tx/struct.bd
-DEFAULT_ARCHITECTURE atom Clock_240_tx

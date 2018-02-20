@@ -1,0 +1,3 @@
+[submodule "software/atpLib"]
+	path = software/atpLib
+	url = git@github.com:AsiQue/BA_ATPLib.git
