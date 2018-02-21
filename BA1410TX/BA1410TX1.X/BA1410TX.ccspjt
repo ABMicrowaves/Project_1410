@@ -1,16 +1,16 @@
 [PROJECT]
-Target=build\default\production\_ext\1092510196\BA1410TX.hex
+Target=build\default\production\_ext\1472\BA1410TX.hex
 Processor_Text=PIC18LF45K22
 CCSVersion=5.008
 Compiler=PCH
 [Target Data]
-FileList=build\default\production\_ext\1092510196\BA1410TX.c
+FileList=build\default\production\_ext\1472\BA1410TX.c
 [Directories]
 Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;C:\Software_projects\ABMicrowaves\Projects\PIC\Project_1410\BA1410TX\
-[build\default\production\_ext\1092510196\BA1410TX.c]
+[build\default\production\_ext\1472\BA1410TX.c]
 Type=4
 [mru-list]
-1=build\default\production\_ext\1092510196\BA1410TX.c
+1=build\default\production\_ext\1472\BA1410TX.c
 [Units]
 Count=1
-1=..\..\Project_1410\BA1410TX\BA1410TX (main)
+1=..\BA1410TX (main)
