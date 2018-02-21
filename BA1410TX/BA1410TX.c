@@ -4,7 +4,7 @@
 #include "PIC18F45K22_registers.h"
 
 
-#define VERSION "BA1410TX V3.6"
+#define VERSION "BA1410TX V3.5"
 #define VER 35
 
 //--------- frequency constants --------------------------------
