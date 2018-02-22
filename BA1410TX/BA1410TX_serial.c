@@ -1,4 +1,5 @@
 
+
 UCHAR comm_ptr, ttccp = 1, debug_mode = 0;
 UCHAR FPGA_image[32],D2A_image[20];
 UCHAR ttccp_error_message[40];
@@ -699,7 +700,7 @@ void list_help(void)
 	COM1_send_str("CS <clock phase><cr>  \tSet clock phase (0-1)\r\n");
 	COM1_send_str("UT <UART Time><cr>  \tSet the stop time, default 15 (0-240)\r\n");// VERSION 3.3  21.03.2016
 	COM1_send_str("US <UART Status><cr>  \tSet the Block (0-1)\r\n");// VERSION 3.3  21.03.2016
-	COM1_send_str("BG <UART Change><cr>  \tSet Block per second (1-20)\r\n");// VERSION 3.3  23.03.2016
+	COM1_send_str("BG <UART Change><cr>  \tSet the UART refresh rate [Hz] (1-20)\r\n");// VERSION 3.3  23.03.2016
 	COM1_send_str("SV <save all><cr>  \tSave parameters\r");
 	COM1_send_str("\r\n");
 }
@@ -868,7 +869,8 @@ void process_ttccp_commands(void)
 				val = get_int();
 				if (val < 2)
 				{
-					setup.data_polarity = val;
+					setup.data_polarity = 1 - val;	// VERSION 3.6: DP0: INVERT, DP1: NORMAL
+													// Instead: 	DP0: NORMAL, DP1: INVERT
 					FPGA_set_reg0();
 				}
 				else
@@ -1189,27 +1191,28 @@ void process_ttccp_commands(void)
 		}
 		break;
 		
-		case 'B': // VERSION 3.3 BG Block Ghange and Check Function 23.0.2016
+		case 'B': // VERSION 3.6 BG Block Ghange and Check Function 23.0.2016
 		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'G':     
 			if (query)
             {
-				sprintf(buf, "BG %lu\r", 1000/setup.Block_per_second);
+				sprintf(buf, "BG %lu\r", setup.Block_per_second);
 				COM1_send_str(buf);
 			}
 			else
             {
 				sub = get_int();
-				if (sub >= 1 && sub <= 40)
+				if (sub >= 1 && sub <= 20)
 				{
-					setup.Block_per_second = 1000 / sub;
+
+					setup.Block_per_second = (1000 / sub);
 				}
 				else
 				{
 					COM1_send_str("\r\nFAIL\r\n");
-					sprintf(ttccp_error_message, "ERR BG %lu\r", 1000/setup.Block_per_second);
+					sprintf(ttccp_error_message, "ERR BG %lu\r", 1000 / setup.Block_per_second);
 					ret = 0;
 					break;
 				}
@@ -1468,13 +1471,13 @@ void process_ttccp_commands(void)
 		setup.frequency, revstat, current_power, setup.bitrate/100, setup.bitrate%100, setup.mode, setup.clock_source, setup.pwr);
 		COM1_send_str(buf);
 		
-		sprintf(buf, "\r\n\nDE=%u, RA=%u, DP=%u, RP=%lu, DS=%u, ID=%u, VL=%lu, RB=%lu, RC=%lu, CP=%u\r"
-		setup.SOQPSK, setup.randomizer, setup.data_polarity, rp, setup.data_source,
+		sprintf(buf, "\r\n\nDE=%u, RA=%u, DP=%u, RP=%lu, DS=%u, ID=%u, VL=%lu, RB=%lu, RC=%lu, CP=%u  \r"
+		setup.SOQPSK, setup.randomizer, 1 - setup.data_polarity, rp, setup.data_source,
 		setup.internal_pattern, setup.power_low_level+20, setup.cot, setup.rc,
 		setup.clock_polarity);
 		COM1_send_str(buf);
 		
-		sprintf(buf, "\r\n\nUT=%u, US=%u\r" setup.UART_Time, setup.UART_Status); // VERSION 3.3 17.1.2016
+		sprintf(buf, "\r\n\nUT=%u, US=%u BG= %lu [Hz] %lu [mSec]\r" setup.UART_Time, setup.UART_Status, 1000 / setup.Block_per_second , setup.Block_per_second); // VERSION 3.3 17.1.2016
 		COM1_send_str(buf);
 		
         update_temperature_string();
